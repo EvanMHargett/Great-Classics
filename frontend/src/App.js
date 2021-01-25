@@ -6,14 +6,14 @@ import SignupFormPage from "./components/SignupFormPage/SignupFormPage";
 import BooksPage from "./components/BooksPage/BooksPage"
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation/Navigation";
-import fetchBooks from './store/books'
+import {fetchBooks} from './store/books'
 
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
-    dispatch(fetchBooks)
+    dispatch(fetchBooks())
   }, [dispatch]);
   
 

@@ -21,22 +21,20 @@ const initialState = {
         }
 }
 
-const FETCH = 'books/FETCH';
+const FIND = 'books/FIND';
 
 
-export const fetchBooks = () => {
-    return {
-        type: FETCH
-    }
-}
+export const fetchBooks = () => ({
+    type: FIND
+});
 
 
 
 function bookReducer(state = initialState, action){
     switch (action.type) {
-        case FETCH:{
+        case FIND:{
             const newState = {...initialState}
-            console.log(newState)
+            // console.log(newState)
             return {...newState}
         }
         default:

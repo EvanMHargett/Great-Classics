@@ -1,8 +1,9 @@
 import { useDispatch, useSelector } from 'react-redux';
 
 export default function Book(){
-    const booksObj = useSelector(state => state.books)
+    const booksObj = useSelector(state => state.book)
     const books = Object.values(booksObj)
+    
     
 
     return (
