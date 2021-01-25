@@ -16,7 +16,7 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      description: {
+      coverLink: {
         type: Sequelize.TEXT,
         allowNull: false,
       },

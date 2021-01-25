@@ -9,10 +9,10 @@ export default function Book(){
     return (
         <ul className="books">
             {books.map((book) => (
-                 <li key={book.title}>
+                 <li key={book.id}>
                     <div> Title: {book.title}</div>
                     <div> Author: {book.author}</div>
-                    <div> Description: {book.description}</div>
+                    <img src={'/' + book.coverLink} alt=''></img>
                 </li>
             ))}
         </ul>

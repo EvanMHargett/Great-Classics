@@ -1,40 +1,25 @@
-const initialState = {
-        1: {
-            title: "Testing1",
-            author: "Shakespear",
-            description: "Filler Text"
-        },
-        2: {
-            title: "Testing2",
-            author: "Shakespear",
-            description: "Filler Text"
-        },
-        3: {
-            title: "Testing3",
-            author: "Shakespear",
-            description: "Filler Text"
-        },
-        4: {
-            title: "Testing4",
-            author: "Shakespear",
-            description: "Filler Text"
-        }
-}
-
-const FIND = 'books/FIND';
+import {fetch} from './csrf'
 
 
-export const fetchBooks = () => ({
-    type: FIND
+const FILL = 'books/FILL';
+
+
+export const fillBooks = (books) => ({
+    type: FILL,
+    books
 });
 
+export const fetchBooks = () => async (dispatch) =>{
+    const res = await fetch('/api/books')
+    dispatch(fillBooks(res.data.books))
+}
 
 
-function bookReducer(state = initialState, action){
+
+function bookReducer(state = {}, action){
     switch (action.type) {
-        case FIND:{
-            const newState = {...initialState}
-            // console.log(newState)
+        case FILL:{
+            const newState = {...action.books}
             return {...newState}
         }
         default:
