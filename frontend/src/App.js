@@ -4,6 +4,7 @@ import { Route, Switch } from "react-router-dom";
 import LoginFormPage from "./components/LoginFormPage/LoginFormPage";
 import SignupFormPage from "./components/SignupFormPage/SignupFormPage";
 import BooksPage from "./components/BooksPage/BooksPage"
+import BookshelvesPage from "./components/Bookshelf/BookshelvesPage"
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation/Navigation";
 import {fetchBooks} from './store/books'
@@ -30,6 +31,9 @@ function App() {
           </Route>
           <Route path="/books">
             <BooksPage />
+          </Route>
+          <Route path="/users/:id/bookshelves">
+            <BookshelvesPage />
           </Route>
         </Switch>
       )}
