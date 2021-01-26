@@ -1,5 +1,5 @@
 import Book from './Book'
-import { useDispatch, useSelector } from 'react-redux';
+import {  useSelector } from 'react-redux';
 
 export default function BooksPage(){
     const booksObj = useSelector(state => state.book)

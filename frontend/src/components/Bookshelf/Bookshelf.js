@@ -1,6 +1,6 @@
 import Book from '../BooksPage/Book'
 
-const bookshelfInfo = {name: 'Testing1'}
+// const bookshelfInfo = {name: 'Testing1'}
 
 export default function Bookshelf({books}){
     const booksArr = Object.values(books)
