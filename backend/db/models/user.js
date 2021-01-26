@@ -85,7 +85,8 @@ User.signup = async function ({ username, email, password }) {
   return await User.scope('currentUser').findByPk(user.id);
 };
   User.associate = function(models) {
-    // associations can be defined here
+    User.hasMany(models.Bookshelf, {foreignKey: "userId"})
+    User.hasMany(models.Review, {foreignKey: "userId"})
   };
   return User;
 };

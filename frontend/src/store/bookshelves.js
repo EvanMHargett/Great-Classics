@@ -64,6 +64,8 @@ export const fetchBookshelves = (id) => async (dispatch) =>{
     }
     },
 }
+    const req = await fetch(`/api/bookshelves/${id}`)
+    console.log(req)
     dispatch(fillBookshelves(myShelves, id))
 }
 

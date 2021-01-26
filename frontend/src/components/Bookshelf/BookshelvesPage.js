@@ -11,26 +11,46 @@ export default function BookshelvesPage(){
     const sessionUser = useSelector(state => state.session.user);
     const bookshelves = useSelector(state => state.bookshelf)
     
+    let arrayShelves
 
     const dispatch = useDispatch();
-    // useEffect(() => {
-    //     console.log("dispatching")
-    //     dispatch(fetchBookshelves(1))
-    // }, [dispatch])
+    useEffect(() => {
+       if(bookshelves){
+        //    console.log("does this run")
+        if(bookshelves[sessionUser.id]){
+            const userShelves = bookshelves[sessionUser.id]
+            arrayShelves = Object.values(userShelves)
+            console.log("Array shelves was set to",arrayShelves)
+            if(arrayShelves){
+                console.log("should trigger")
+            }
+            
+        }
+       }
+    }, [bookshelves])
 
-    const userShelves = bookshelves[sessionUser.id]
-    const arrayShelves = Object.values(userShelves)
-
-    return (
-        <>
-            <h1> My Bookshelves</h1>
-
-            <ul>
-                {arrayShelves.map((shelf) => {
-                return (
-                    <Bookshelf  books={shelf}></Bookshelf>
-                )})}
-            </ul>
-        </>
-    )
+    
+    if(arrayShelves){
+        return (
+            <>
+                <h1> My Bookshelves</h1>
+    
+                <ul>
+                    
+                    {arrayShelves.map((shelf) => {
+                    return (
+                        <Bookshelf  books={shelf}></Bookshelf>
+                    )})}
+                </ul>
+            </>
+        )
+    }
+    else{
+        return (
+            <>
+                <h1> No Bookshelves Currently</h1>
+                <p>Would you like to create on?</p>
+            </>
+        )
+    }
 } 

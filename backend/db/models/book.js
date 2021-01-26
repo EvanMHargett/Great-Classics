@@ -6,7 +6,16 @@ module.exports = (sequelize, DataTypes) => {
     coverLink: DataTypes.TEXT
   }, {});
   Book.associate = function(models) {
-    // associations can be defined here
+    Book.belongsToMany(models.Bookshelf, {
+      through: "BookshelfBooks",
+      foreignKey: "bookshelfId",
+      otherKey: "bookId"
+    })
+    Book.hasMany(models.Review, {
+      foreignKey: "bookId",
+      onDelete: 'cascade',
+      hooks: true,
+    })
   };
   return Book;
 };
