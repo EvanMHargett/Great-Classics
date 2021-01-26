@@ -2,13 +2,14 @@ import {fetch} from './csrf'
 
 const FILL = '/bookshelves/FILL'
 
-export const fillBookshelves = (bookshelves, id) =>{
+export const fillBookshelves = (bookshelves, id) =>({
     type: FILL,
     bookshelves,
     id
-}
+})
 
-export const fetchBooks = (id) => async (dispatch) =>{
+export const fetchBookshelves = (id) => async (dispatch) =>{
+    console.log("fetching shelves")
     const myShelves = {
     1: {
         1: {
@@ -70,7 +71,7 @@ function bookshelfReducer(state ={}, action){
     switch(action.type){
         case FILL:{
             const newState = {...state}
-            newstate[id] = state.bookshelves
+            newState[action.id] = action.bookshelves
             return {...newState}
 
         }
@@ -78,3 +79,5 @@ function bookshelfReducer(state ={}, action){
             return state
     }
 }
+
+export default bookshelfReducer

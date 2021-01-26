@@ -4,10 +4,12 @@ import thunk from "redux-thunk";
 
 import sessionReducer from './session';
 import bookReducer from './books';
+import bookshelfReducer from './bookshelves';
 
 const rootReducer = combineReducers({
   session: sessionReducer,
-  book: bookReducer
+  book: bookReducer,
+  bookshelf: bookshelfReducer,
 });
 
 let enhancer;
