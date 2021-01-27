@@ -10,6 +10,7 @@ export default function Book({book}){
             <div> Title: {book.title}</div>
             <div> Author: {book.author}</div>
             <img src={'/' + book.coverLink} alt=''></img>
+            
         </>
     )
 }

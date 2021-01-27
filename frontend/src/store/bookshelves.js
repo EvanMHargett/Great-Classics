@@ -2,17 +2,32 @@ import {fetch} from './csrf'
 
 const FILL = '/bookshelves/FILL'
 
+
 export const fillBookshelves = (bookshelves, id) =>({
     type: FILL,
     bookshelves,
     id
 })
 
+
+
 export const fetchBookshelves = (id) => async (dispatch) =>{
     
     const req = await fetch(`/api/bookshelves/${id}`)
   
     dispatch(fillBookshelves(req.data.bookshelves, id))
+}
+
+export const addToShelf = (id, bookId, bookshelfId) => async (dispatch) =>{
+    await fetch(`/api/bookshelf/${bookshelfId}`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({bookId, bookshelfId})
+    })
+
+    dispatch(fetchBookshelves(id))
 }
 
 function bookshelfReducer(state ={}, action){

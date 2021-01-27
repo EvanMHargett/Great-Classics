@@ -1,4 +1,5 @@
 import Book from '../BooksPage/Book'
+import AddToShelf from '../AddToShelf/AddToShelf'
 
 // const bookshelfInfo = {name: 'Testing1'}
 
@@ -13,6 +14,7 @@ export default function Bookshelf({books}){
 
                     <li key = {book.id}>
                          <Book book={book}></Book>
+                         <AddToShelf book={book}></AddToShelf>
                     </li>
                 ))}
             </ul>
