@@ -38,7 +38,7 @@ export default function BookshelvesPage(){
 
                     const books = shelf.Books
                     return (
-                        <Bookshelf  books={books} key={shelf.id}></Bookshelf>
+                        <Bookshelf  books={books} key={shelf.id} shelf={shelf}></Bookshelf>
                     )})}
                 </ul>
             </>

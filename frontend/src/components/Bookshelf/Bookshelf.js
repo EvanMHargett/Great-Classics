@@ -1,9 +1,9 @@
 import Book from '../BooksPage/Book'
-import AddToShelf from '../AddToShelf/AddToShelf'
+import ChangeReadStatus from '../ChangeReadStatus/ChangeReadStatus'
 
 // const bookshelfInfo = {name: 'Testing1'}
 
-export default function Bookshelf({books}){
+export default function Bookshelf({books, shelf}){
     const booksArr = Object.values(books)
 
 
@@ -14,7 +14,7 @@ export default function Bookshelf({books}){
 
                     <li key = {book.id}>
                          <Book book={book}></Book>
-                         {/* <AddToShelf book={book}></AddToShelf> */}
+                         <ChangeReadStatus book={book} readbooks={{}} shelf={shelf}></ChangeReadStatus>
                     </li>
                 ))}
             </ul>
