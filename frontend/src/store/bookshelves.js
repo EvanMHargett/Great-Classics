@@ -14,8 +14,19 @@ export const fillBookshelves = (bookshelves, id) =>({
 export const fetchBookshelves = (id) => async (dispatch) =>{
     
     const req = await fetch(`/api/bookshelves/${id}`)
+    
   
-    dispatch(fillBookshelves(req.data.bookshelves, id))
+    const normalizedBooks = req.data.bookshelves.map((bookshelf) =>{
+        const newShelf = {...bookshelf}
+        newShelf.Books.forEach((book) => {
+            book.readStatus = book.BookshelfBooks.readStatus
+        })
+        return newShelf
+    })
+    console.log("including status", normalizedBooks)
+    console.log("excluding status", req.data.bookshelves)
+  
+    dispatch(fillBookshelves(normalizedBooks, id))
 }
 
 export const addBookToShelf = (id, bookId, currentBookshelfId, nextBookshelfId) => async (dispatch) =>{
@@ -25,6 +36,18 @@ export const addBookToShelf = (id, bookId, currentBookshelfId, nextBookshelfId) 
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({bookId, currentBookshelfId, nextBookshelfId})
+    })
+
+    dispatch(fetchBookshelves(id))
+}
+
+export const changeReadStatus = (id, bookId, bookshelfId, readStatus) => async (dispatch) =>{
+    await fetch(`/api/bookshelf/readStatus`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({bookId, bookshelfId, readStatus})
     })
 
     dispatch(fetchBookshelves(id))

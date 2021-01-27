@@ -12,8 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     readStatus: DataTypes.STRING
   }, {});
   BookshelfBooks.associate = function(models) {
-    // BookshelfBooks.belongsTo(models.Book, {foreignKey: "bookId"})
-    // BookshelfBooks.belongsTo(models.Bookshelf, {foreignKey: "bookshelfId"})
+
   };
   return BookshelfBooks;
 };

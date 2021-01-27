@@ -1,11 +1,11 @@
 import {  useSelector, useDispatch } from 'react-redux'
-import {addBookToShelf} from "../../store/bookshelves"
+import {changeReadStatus} from "../../store/bookshelves"
 
-export default function ChangeReadStatus({book, readBooks}){
+export default function ChangeReadStatus({book, readBooks, shelf}){
     const sessionUser = useSelector(state => state.session.user)
 
     const dispatch = useDispatch();
-    let readStatus
+    let readStatus = book.readStatus
     if(readBooks){
         if(!readBooks[book.title]){
             readStatus = 'unread'
@@ -17,7 +17,7 @@ export default function ChangeReadStatus({book, readBooks}){
     }
     return (
         <select className="read" 
-            onChange={(e) => {         
+            onChange={(e) => {  dispatch(changeReadStatus(sessionUser.id, book.id, shelf.id, e.target.value))     
         }}
         defaultValue={readStatus}>
                 <option value='unread' >Unread</option>

@@ -7,15 +7,13 @@ router.get('/:userId', asyncHandler(async (req, res, next) =>{
     const bookshelves = await Bookshelf.findAll({
         include: [{
             model: Book,
+            through: {
+                attributes: ['readStatus']
+            }
         }],
         where: {userId: req.params.userId}
     })
-    // const json = await bookshelves.json()
-    // console.log("bookshelves", bookshelf, bookshel.Books)
-    // bookshelves.forEach((bookshelf) =>{
-    //     console.log("Books ",bookshelf.Books)
-    // })
-    // console.log(bookshelves.dataValues.Books)
+    console.log("Looking for info", bookshelves[1].Books[0].BookshelfBooks)
     return res.json({bookshelves})
 }))
 

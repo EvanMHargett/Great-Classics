@@ -18,13 +18,13 @@ router.post('/', asyncHandler(async (req, res, next) =>{
         }
         await BookshelfBooks.create({bookId, bookshelfId: nextBookshelfId})
     }
-    // else{
-    //     console.log("updating entry")
-    //     const bookshelfBookToUpdate = await BookshelfBooks.findOne({where: {bookId, bookshelfId: currentBookshelfId}})
-    //     await bookshelfBookToUpdate.update({bookshelfId: 1})
-    //     console.log("asd", bookshelfBookToUpdate)
-    // }
+}))
 
+router.post('/readStatus', asyncHandler(async (req, res, next) =>{
+    const {bookId, bookshelfId, readStatus} = req.body
+    const bookshelfBook = await BookshelfBooks.findOne({where: {bookId, bookshelfId}})
+    await bookshelfBook.destroy()
+    await BookshelfBooks.create({bookId, bookshelfId, readStatus: readStatus})
 }))
 
 module.exports = router
