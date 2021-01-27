@@ -14,7 +14,7 @@ export default function Bookshelf({books}){
 
                     <li key = {book.id}>
                          <Book book={book}></Book>
-                         <AddToShelf book={book}></AddToShelf>
+                         {/* <AddToShelf book={book}></AddToShelf> */}
                     </li>
                 ))}
             </ul>
