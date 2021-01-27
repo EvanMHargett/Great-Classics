@@ -18,8 +18,8 @@ export const fetchBookshelves = (id) => async (dispatch) =>{
     dispatch(fillBookshelves(req.data.bookshelves, id))
 }
 
-export const addToShelf = (id, bookId, currentBookshelfId, nextBookshelfId) => async (dispatch) =>{
-    await fetch(`/api/bookshelf/${nextBookshelfId}`, {
+export const addBookToShelf = (id, bookId, currentBookshelfId, nextBookshelfId) => async (dispatch) =>{
+    await fetch(`/api/bookshelf/`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
