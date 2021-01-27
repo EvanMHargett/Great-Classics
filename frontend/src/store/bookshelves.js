@@ -18,13 +18,13 @@ export const fetchBookshelves = (id) => async (dispatch) =>{
     dispatch(fillBookshelves(req.data.bookshelves, id))
 }
 
-export const addToShelf = (id, bookId, bookshelfId) => async (dispatch) =>{
-    await fetch(`/api/bookshelf/${bookshelfId}`, {
+export const addToShelf = (id, bookId, currentBookshelfId, nextBookshelfId) => async (dispatch) =>{
+    await fetch(`/api/bookshelf/${nextBookshelfId}`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({bookId, bookshelfId})
+        body: JSON.stringify({bookId, currentBookshelfId, nextBookshelfId})
     })
 
     dispatch(fetchBookshelves(id))
