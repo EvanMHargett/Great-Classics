@@ -23,8 +23,6 @@ export const fetchBookshelves = (id) => async (dispatch) =>{
         })
         return newShelf
     })
-    console.log("including status", normalizedBooks)
-    console.log("excluding status", req.data.bookshelves)
   
     dispatch(fillBookshelves(normalizedBooks, id))
 }
