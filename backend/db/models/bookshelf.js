@@ -5,11 +5,11 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING
   }, {});
   Bookshelf.associate = function(models) {
-   Bookshelf.belongsToMany(models.Book, {
-      through: "BookshelfBooks",
-      foreignKey: "bookId",
-      otherKey: "bookshelfId"
-    })
+  Bookshelf.belongsToMany(models.Book, {
+     foreignKey: "bookshelfId",
+     through: "BookshelfBooks",
+     otherKey: "bookId"
+  })
     Bookshelf.belongsTo(models.User, {
       foreignKey: "userId"
     })
