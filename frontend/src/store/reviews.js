@@ -7,14 +7,13 @@ export const fillReviews = (reviews) => ({
     reviews
 });
 
+
 export const fetchReviews = () => async (dispatch) =>{
     const res = await fetch('/api/reviews')
-    console.log("fetching reviews", res.data)
     dispatch(fillReviews(res.data))
 }
 
 export const submitReview = (score, reviewText, userId, bookId) => async (dispatch) =>{
-    console.log("submitting review")
     await fetch(`/api/reviews/`, {
         method: 'POST',
         headers: {
@@ -26,6 +25,14 @@ export const submitReview = (score, reviewText, userId, bookId) => async (dispat
     dispatch(fetchReviews())
 }
 
+export const deleteReview = (reviewId) => async (dispatch) =>{
+    console.log("deleting review")
+    await fetch(`/api/reviews/${reviewId}`, {
+        method: 'DELETE',
+    })
+    console.log("after deleting")
+    dispatch(fetchReviews())
+}
 
 export default function reviewReducer(state={}, action){
     switch (action.type) {

@@ -27,6 +27,28 @@ export const fetchBookshelves = (id) => async (dispatch) =>{
     dispatch(fillBookshelves(normalizedBooks, id))
 }
 
+export const createBookshelf = (id, title) => async (dispatch) =>{
+    
+    const req = await fetch(`/api/bookshelves/${id}`,{
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({title})
+    })
+    
+  
+    const normalizedBooks = req.data.bookshelves.map((bookshelf) =>{
+        const newShelf = {...bookshelf}
+        newShelf.Books.forEach((book) => {
+            book.readStatus = book.BookshelfBooks.readStatus
+        })
+        return newShelf
+    })
+  
+    dispatch(fillBookshelves(normalizedBooks, id))
+}
+
 export const addBookToShelf = (id, bookId, currentBookshelfId, nextBookshelfId) => async (dispatch) =>{
     await fetch(`/api/bookshelf/`, {
         method: 'POST',

@@ -46,7 +46,7 @@ export default function BooksPage(){
                     <Book book={book}></Book>
                     <AddToShelf book={book} arrayShelves={arrayShelves} booksOnShelves={booksOnShelves}></AddToShelf>
                     { userReviewsObj[book.id] && 
-                        <AlreadyReviewed book={book}></AlreadyReviewed>
+                        <AlreadyReviewed review={userReviewsObj[book.id]} book={book}></AlreadyReviewed>
                      }
                     {!userReviewsObj[book.id] && 
                         <Review book={book}></Review>

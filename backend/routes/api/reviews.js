@@ -18,6 +18,25 @@ router.post('/', asyncHandler(async (req, res, next) =>{
     return res.json(review)
 }))
 
+router.delete('/:reviewId', asyncHandler(async (req,res, next) =>{
+    const reviewId = parseInt(req.params.reviewId, 10)
+    const review = await Review.findOne({where: {
+        id: reviewId
+    }})
+    await review.destroy()
+    return res.json({success: true})
+}))
+
+router.put('/:reviewId', asyncHandler(async (req,res, next) =>{
+    const reviewId = parseInt(req.params.reviewId, 10)
+    const {score, content} = req.body
+    const review = await Review.findOne({where: {
+        id: reviewId
+    }})
+    await review.update({score, content})
+    return res.json({success: true})
+}))
+
 
 
 module.exports = router
