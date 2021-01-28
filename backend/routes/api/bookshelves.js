@@ -20,16 +20,8 @@ router.get('/:userId', asyncHandler(async (req, res, next) =>{
 router.get('/:userId', asyncHandler(async (req, res, next) =>{
     const userId = parseInt(req.params.userId, 10)
     const {title} = req.body
-    const bookshelves = await Bookshelf.findAll({
-        include: [{
-            model: Book,
-            through: {
-                attributes: ['readStatus']
-            }
-        }],
-        where: {userId: req.params.userId}
-    })
+    await Bookshelf.create({userId, name: title})
 
-    return res.json({bookshelves})
+    return res.json({status: 'ok'})
 }))
 module.exports = router;

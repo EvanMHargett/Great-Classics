@@ -14,6 +14,12 @@ router.get('/', asyncHandler(async (req, res, next) =>{
 
 router.post('/', asyncHandler(async (req, res, next) =>{
     const {score, reviewText, userId, bookId} = req.body
+    const existingReview = await Review.findOne({where: {
+        userId, bookId
+    }})
+    if(existingReview){
+        await existingReview.destroy()
+    }
     const review = await Review.create({userId, score, content: reviewText, bookId})
     return res.json(review)
 }))
@@ -27,15 +33,15 @@ router.delete('/:reviewId', asyncHandler(async (req,res, next) =>{
     return res.json({success: true})
 }))
 
-router.put('/:reviewId', asyncHandler(async (req,res, next) =>{
-    const reviewId = parseInt(req.params.reviewId, 10)
-    const {score, content} = req.body
-    const review = await Review.findOne({where: {
-        id: reviewId
-    }})
-    await review.update({score, content})
-    return res.json({success: true})
-}))
+// router.put('/:reviewId', asyncHandler(async (req,res, next) =>{
+//     const reviewId = parseInt(req.params.reviewId, 10)
+//     const {score, content} = req.body
+//     const review = await Review.findOne({where: {
+//         id: reviewId
+//     }})
+//     await review.update({score, content})
+//     return res.json({success: true})
+// }))
 
 
 
