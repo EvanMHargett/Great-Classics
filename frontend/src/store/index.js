@@ -5,11 +5,13 @@ import thunk from "redux-thunk";
 import sessionReducer from './session';
 import bookReducer from './books';
 import bookshelfReducer from './bookshelves';
+import reviewReducer from "./reviews";
 
 const rootReducer = combineReducers({
   session: sessionReducer,
   book: bookReducer,
   bookshelf: bookshelfReducer,
+  review: reviewReducer,
 });
 
 let enhancer;

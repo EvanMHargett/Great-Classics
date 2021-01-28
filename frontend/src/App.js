@@ -9,6 +9,7 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation/Navigation";
 import {fetchBooks} from './store/books'
 import {fetchBookshelves} from "./store/bookshelves"
+import {fetchReviews} from "./store/reviews"
 
 function App() {
   const dispatch = useDispatch();
@@ -17,6 +18,7 @@ function App() {
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
     dispatch(fetchBooks())
+    dispatch(fetchReviews())
   }, [dispatch]);
   
   useEffect(() => {
