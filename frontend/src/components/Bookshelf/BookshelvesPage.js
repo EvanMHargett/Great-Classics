@@ -19,7 +19,7 @@ export default function BookshelvesPage(){
 
     // const dispatch = useDispatch();
     
-    if(bookshelves){
+    if(bookshelves && sessionUser){
         if(bookshelves[sessionUser.id]){
             const userShelves = bookshelves[sessionUser.id]
             arrayShelves = Object.values(userShelves)

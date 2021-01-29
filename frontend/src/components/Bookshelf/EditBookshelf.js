@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import {editBookshelf, deleteBookshelf} from '../../store/bookshelves'
 import './EditBookshelf.css'
@@ -8,6 +8,11 @@ export default function EditBookshelf({shelf}){
     const [title, setTitle] = useState('')
     const sessionUser = useSelector(state => state.session.user);
     const dispatch = useDispatch()
+    const bookshelves = useSelector(state => state.bookshelf)
+    useEffect(() => {
+        setVisible(false)
+    }, [bookshelves])
+
 
     function handleSubmit(e){
         e.preventDefault()

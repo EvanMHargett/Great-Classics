@@ -4,6 +4,7 @@ import {  useSelector } from 'react-redux';
 import Review from '../Review/Review'
 import AlreadyReviewed from '../Review/AlreadyReviewed';
 import './BooksPage.css'
+import { Link } from 'react-router-dom'
 
 
 export default function BooksPage(){
@@ -61,6 +62,7 @@ export default function BooksPage(){
                         } 
                     </div>
                     }
+                    <Link to={`/books/${book.id}`}>View all reviews for this book</Link>
                     
                 </li>
             ))}

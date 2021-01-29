@@ -5,6 +5,7 @@ import LoginFormPage from "./components/LoginFormPage/LoginFormPage";
 import SignupFormPage from "./components/SignupFormPage/SignupFormPage";
 import BooksPage from "./components/BooksPage/BooksPage"
 import BookshelvesPage from "./components/Bookshelf/BookshelvesPage"
+import AllReviews from "./components/Review/AllReviews"
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation/Navigation";
 import {fetchBooks} from './store/books'
@@ -39,6 +40,9 @@ function App() {
           </Route>
           <Route path="/signup">
             <SignupFormPage />
+          </Route>
+          <Route path="/books/:bookId">
+            <AllReviews></AllReviews>
           </Route>
           <Route path="/books">
             <BooksPage />
