@@ -34,8 +34,8 @@
 .home-menu a {
     color: #6FBEF3;
 }
-.home-menu li a:hover,
-.home-menu li a:focus {
+.home-menu .navlink:hover,
+.home-menu .navlink:focus {
     background: none;
     border: none;
     color: #AECFE5;

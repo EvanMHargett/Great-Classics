@@ -23,12 +23,14 @@ function Navigation({ isLoaded }){
     );
   } else {
     sessionLinks = (
-      <>
-        <NavLink to="/login">Log In</NavLink>
-        <NavLink to="/signup">Sign Up</NavLink>
-        <NavLink to="/books">Books</NavLink>
-        
-      </>
+      <div className="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+        <NavLink to='' className="pure-menu-heading">Great Classics</NavLink>
+        <ul className="pure-menu-heading">  
+          <NavLink to="/login" className='navlink'>Log In</NavLink>
+          <NavLink to="/signup" className='navlink'>Sign Up</NavLink>
+          <NavLink to="/books" className='navlink'>Books</NavLink>
+        </ul>
+      </div>
     );
   }
 
