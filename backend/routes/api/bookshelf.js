@@ -18,6 +18,7 @@ router.post('/', asyncHandler(async (req, res, next) =>{
         }
         await BookshelfBooks.create({bookId, bookshelfId: nextBookshelfId})
     }
+    return res.json({success: true})
 }))
 
 router.post('/readStatus', asyncHandler(async (req, res, next) =>{

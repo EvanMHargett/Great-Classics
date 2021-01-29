@@ -36,7 +36,7 @@ export default function Review({book}){
                         </select>
                     </label>
                     <textarea value={review} onChange={(e) => setReview(e.target.value)} placeholder="Write a review (optional)"></textarea> 
-                    <button type='submit' class='pure-button pure-button-primary'>Submit Review</button>
+                    <button type='submit' className='pure-button pure-button-primary'>Submit Review</button>
                 </form>
             }
             {!sessionUser && 
