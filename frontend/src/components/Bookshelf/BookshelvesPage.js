@@ -1,5 +1,7 @@
 import Bookshelf from "./Bookshelf"
 import {  useSelector } from 'react-redux';
+import CreateBookshelf from "./CreateBookshelf";
+import EditBookshelf from "./EditBookshelf";
 
 // import {useEffect} from 'react'
 // import {fetchBookshelves} from "../../store/bookshelves"
@@ -41,6 +43,8 @@ export default function BookshelvesPage(){
                         <Bookshelf  books={books} key={shelf.id} shelf={shelf}></Bookshelf>
                     )})}
                 </ul>
+                <p>Make a new bookshelf?</p>
+                <CreateBookshelf></CreateBookshelf>
             </>
         )
     }
@@ -50,6 +54,7 @@ export default function BookshelvesPage(){
             <>
                 <h1> No Bookshelves Currently</h1>
                 <p>Would you like to create one?</p>
+                <CreateBookshelf></CreateBookshelf>
             </>
         )
     }

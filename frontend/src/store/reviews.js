@@ -26,13 +26,25 @@ export const submitReview = (score, reviewText, userId, bookId) => async (dispat
 }
 
 export const deleteReview = (reviewId) => async (dispatch) =>{
-    console.log("deleting review")
+    
     await fetch(`/api/reviews/${reviewId}`, {
         method: 'DELETE',
     })
-    console.log("after deleting")
+
     dispatch(fetchReviews())
 }
+
+// export const editReview = (score, content, reviewId) => async (dispatch) =>{
+//     await fetch(`/api/reviews/${reviewId}`, {
+//         method: 'PUT',
+//         headers: {
+//             'Content-Type': 'application/json',
+//         },
+//         body: JSON.stringify({score, content})
+//     })
+
+//     dispatch(fetchReviews())
+// }
 
 export default function reviewReducer(state={}, action){
     switch (action.type) {

@@ -36,17 +36,30 @@ export const createBookshelf = (id, title) => async (dispatch) =>{
         },
         body: JSON.stringify({title})
     })
+      
+    dispatch(fetchBookshelves(id))
+}
+
+export const editBookshelf = (userId, id, title) => async (dispatch) =>{
     
-  
-    const normalizedBooks = req.data.bookshelves.map((bookshelf) =>{
-        const newShelf = {...bookshelf}
-        newShelf.Books.forEach((book) => {
-            book.readStatus = book.BookshelfBooks.readStatus
-        })
-        return newShelf
+    const req = await fetch(`/api/bookshelves/${userId}`,{
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({id, title})
     })
-  
-    dispatch(fillBookshelves(normalizedBooks, id))
+      
+    dispatch(fetchBookshelves(userId))
+}
+
+export const deleteBookshelf = (userId, id) => async (dispatch) =>{
+    
+    const req = await fetch(`/api/bookshelves/${userId}/${id}`,{
+        method: 'DELETE',
+    })
+      
+    dispatch(fetchBookshelves(userId))
 }
 
 export const addBookToShelf = (id, bookId, currentBookshelfId, nextBookshelfId) => async (dispatch) =>{
