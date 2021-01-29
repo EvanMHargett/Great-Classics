@@ -15,7 +15,7 @@ export default function Review({book}){
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="pure-form">
             <label> Choose a score
                 <select className="score"
                     onChange={(e) => setScore(e.target.value)}
@@ -32,11 +32,7 @@ export default function Review({book}){
                     <option value="10">10</option>
                 </select>
             </label>
-            <label>
-                {'Write a review (optional)'}
-                <textarea value={review} onChange={(e) => setReview(e.target.value)}></textarea> 
-
-            </label>
+            <textarea value={review} onChange={(e) => setReview(e.target.value)} placeholder="Write a review (optional)"></textarea> 
             <button type='submit'>Submit Review</button>
         </form>
     )

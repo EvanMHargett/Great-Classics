@@ -18,11 +18,11 @@ export default function AlreadyReviewed({review, book}){
             {review.content && 
                 <div> {review.content}</div>
             }
-            <button onClick={(e) =>setVisible(!visible)}>Edit this review</button>
+            <button onClick={(e) =>setVisible(!visible)} className='pure-button'>Edit this review</button>
             {visible && 
                 <Review book={book}></Review>
             }
-            <button onClick={(e) => {dispatch(deleteReview(review.id))}}>Delete this review</button>
+            <button onClick={(e) => {dispatch(deleteReview(review.id))}} className='pure-button'>Delete this review</button>
         </div>
     )
 }

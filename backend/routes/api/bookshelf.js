@@ -25,6 +25,7 @@ router.post('/readStatus', asyncHandler(async (req, res, next) =>{
     const bookshelfBook = await BookshelfBooks.findOne({where: {bookId, bookshelfId}})
     await bookshelfBook.destroy()
     await BookshelfBooks.create({bookId, bookshelfId, readStatus: readStatus})
+    return res.json({success: true})
 }))
 
 module.exports = router

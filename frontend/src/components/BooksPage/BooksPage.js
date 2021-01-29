@@ -3,6 +3,7 @@ import AddToShelf from '../AddToShelf/AddToShelf'
 import {  useSelector } from 'react-redux';
 import Review from '../Review/Review'
 import AlreadyReviewed from '../Review/AlreadyReviewed';
+import './BooksPage.css'
 
 
 export default function BooksPage(){
@@ -42,9 +43,9 @@ export default function BooksPage(){
     return (
         <ul>
             {books.map((book) => (
-                <li key={book.id}>
-                    <Book book={book}></Book>
-                    <AddToShelf book={book} arrayShelves={arrayShelves} booksOnShelves={booksOnShelves}></AddToShelf>
+                <li key={book.id} className='pure-u-1-4 book-box'>
+                    <Book book={book} class="book"></Book>
+                    <AddToShelf book={book} arrayShelves={arrayShelves} booksOnShelves={booksOnShelves} classNam='add-to-shelf'></AddToShelf>
                     { userReviewsObj[book.id] && 
                         <AlreadyReviewed review={userReviewsObj[book.id]} book={book}></AlreadyReviewed>
                      }

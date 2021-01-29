@@ -12,13 +12,13 @@ export default function CreateBookshelf(){
         dispatch(createBookshelf(sessionUser.id, title))
     }
     return (
-        <form onSubmit={handleSubmit}>
-            <label>Enter a title for the bookshelf
-                <input type="text"
-                    onChange={(e) => setTitle(e.target.value)} value={title}>
-                </input>
-            </label>
-            <button type="submit">Create Bookshelf</button>
+        <form onSubmit={handleSubmit} className="pure-form">
+            <input type="text"
+                onChange={(e) => setTitle(e.target.value)} value={title}
+                placeholder="Title"
+            >
+            </input>
+            <button type="submit" className="pure-button">Create Bookshelf</button>
         </form>
     )
 

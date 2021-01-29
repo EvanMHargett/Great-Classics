@@ -1,6 +1,7 @@
 import {useState} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import {editBookshelf, deleteBookshelf} from '../../store/bookshelves'
+import './EditBookshelf.css'
 
 export default function EditBookshelf({shelf}){
     const [visible, setVisible] = useState(false)
@@ -16,18 +17,17 @@ export default function EditBookshelf({shelf}){
 
     return(
         <>
-            <button onClick={(e) => setVisible(!visible)}>Edit this Bookshelf</button>
+            <button onClick={(e) => setVisible(!visible)} className="pure-button">Edit this Bookshelf</button>
             {visible &&
-                <form onSubmit={handleSubmit}>
-                    <label>Enter a new title for the bookshelf
-                        <input type="text"
-                            onChange={(e) => setTitle(e.target.value)} value={title}>
-                        </input>
-                    </label>
-                    <button type="submit">Edit Bookshelf</button>
+                <form onSubmit={handleSubmit} className="pure-form">
+                    <input type="text"
+                        onChange={(e) => setTitle(e.target.value)} value={title}
+                        placeholder="New Title"
+                    />   
+                    <button type="submit" className="pure-button pure-button-primary">Edit Bookshelf</button>
                 </form>
             }
-            <button onClick={(e) => dispatch(deleteBookshelf(sessionUser.id, shelf.id))}>Delete this Bookshelf</button>
+            <button onClick={(e) => dispatch(deleteBookshelf(sessionUser.id, shelf.id))} className="button-warning pure-button">Delete this Bookshelf</button>
         </>
     )
 }
