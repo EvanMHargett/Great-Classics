@@ -2,6 +2,7 @@ import {useState, useEffect} from 'react'
 import {deleteReview} from '../../store/reviews'
 import {useDispatch, useSelector} from 'react-redux'
 import Review from './Review'
+import './Review.css'
 
 
 export default function AlreadyReviewed({review, book}){
@@ -22,7 +23,7 @@ export default function AlreadyReviewed({review, book}){
             {visible && 
                 <Review book={book}></Review>
             }
-            <button onClick={(e) => {dispatch(deleteReview(review.id))}} className='pure-button'>Delete this review</button>
+            <button onClick={(e) => {dispatch(deleteReview(review.id))}} className='pure-button delete-button'>Delete this review</button>
         </div>
     )
 }

@@ -12,14 +12,19 @@ export default function BooksPage(){
     const bookshelves = useSelector(state => state.bookshelf)
     const sessionUser = useSelector(state => state.session.user)
     const reviews = useSelector(state => state.review)
-    const reviewsArr = Object.values(reviews)
-    const userReviews = reviewsArr.filter(review => review.userId = sessionUser.id) 
     const userReviewsObj = {}
-    userReviews.forEach(review =>{
-        userReviewsObj[review.bookId] = review
-    })
+
+    if(reviews && sessionUser){
+        const reviewsArr = Object.values(reviews)
+        if(reviewsArr){
+            const userReviews = reviewsArr.filter(review => review.userId = sessionUser.id) 
+            userReviews.forEach(review =>{
+            userReviewsObj[review.bookId] = review
+            })
+        }
+    }
     let arrayShelves
-    if(bookshelves)
+    if(bookshelves && sessionUser)
     {
         if(bookshelves[sessionUser.id])
         {
@@ -46,12 +51,16 @@ export default function BooksPage(){
                 <li key={book.id} className='pure-u-1-4 book-box'>
                     <Book book={book} class="book"></Book>
                     <AddToShelf book={book} arrayShelves={arrayShelves} booksOnShelves={booksOnShelves} classNam='add-to-shelf'></AddToShelf>
-                    { userReviewsObj[book.id] && 
-                        <AlreadyReviewed review={userReviewsObj[book.id]} book={book}></AlreadyReviewed>
-                     }
-                    {!userReviewsObj[book.id] && 
-                        <Review book={book}></Review>
-                    } 
+                    {userReviewsObj && 
+                    <div>
+                        { userReviewsObj[book.id] && 
+                            <AlreadyReviewed review={userReviewsObj[book.id]} book={book}></AlreadyReviewed>
+                        }
+                        {!userReviewsObj[book.id] && 
+                            <Review book={book}></Review>
+                        } 
+                    </div>
+                    }
                     
                 </li>
             ))}

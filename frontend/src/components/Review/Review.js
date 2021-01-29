@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import {  useSelector, useDispatch } from 'react-redux';
 import { submitReview } from '../../store/reviews'
+import './Review.css'
 
 export default function Review({book}){
     const [score, setScore] = useState(1)
@@ -33,7 +34,7 @@ export default function Review({book}){
                 </select>
             </label>
             <textarea value={review} onChange={(e) => setReview(e.target.value)} placeholder="Write a review (optional)"></textarea> 
-            <button type='submit'>Submit Review</button>
+            <button type='submit' class='pure-button pure-button-primary'>Submit Review</button>
         </form>
     )
 }

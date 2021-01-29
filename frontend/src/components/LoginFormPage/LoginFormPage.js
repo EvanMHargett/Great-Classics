@@ -48,6 +48,7 @@ function LoginFormPage() {
         />
       </label>
       <button type="submit">Log In</button>
+      <button onClick={(e) => dispatch(sessionActions.login({ credential:'demo@user.io', password: 'password' }))}> Log In as a Demo User</button>
     </form>
   );
 }

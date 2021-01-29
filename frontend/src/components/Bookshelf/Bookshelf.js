@@ -13,7 +13,7 @@ export default function Bookshelf({books, shelf}){
                 <ul>
                     {booksArr.map((book) => (
 
-                        <li key = {book.id} className='pure-u-1-3'>
+                        <li key = {book.id} className='pure-u-1-4'>
                             <Book book={book}></Book>
                             <ChangeReadStatus book={book} readbooks={{}} shelf={shelf}></ChangeReadStatus>
                         </li>
