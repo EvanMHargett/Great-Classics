@@ -23,17 +23,19 @@ export default function AddToShelf({book, arrayShelves, booksOnShelves}){
 
     if(arrayShelves && JSON.stringify(arrayShelves) !== JSON.stringify([])){
         return (
-            <select className="shelf" 
-                onChange={(e) => {
-                    dispatch(addBookToShelf(sessionUser.id, book.id, prevShelf , Number(e.target.value)))
-            }}
-            defaultValue={prevShelf}>
-                <option value={-1} >None</option>
-                {arrayShelves.map((shelf) =>(
-                    <option key={shelf.id} value={shelf.id} >{shelf.name}</option>
-                ))}
+            <div>Currently on shelf:
+                <select className="shelf" 
+                    onChange={(e) => {
+                        dispatch(addBookToShelf(sessionUser.id, book.id, prevShelf , Number(e.target.value)))
+                }}
+                defaultValue={prevShelf}>
+                    <option value={-1} >None</option>
+                    {arrayShelves.map((shelf) =>(
+                        <option key={shelf.id} value={shelf.id} >{shelf.name}</option>
+                    ))}
 
-            </select>
+                </select>
+            </div>
         )
     }
     else{
