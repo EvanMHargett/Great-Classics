@@ -26,7 +26,7 @@ function LoginFormPage() {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className='pure-form form'>
         <ul>
           {errors.map((error, idx) => <li key={idx}>{error}</li>)}
         </ul>
@@ -48,9 +48,9 @@ function LoginFormPage() {
             required
           />
         </label>
-        <button type="submit">Log In</button>
+        <button type="submit" className="pure-button">Log In</button>
       </form>
-      <button onClick={(e) => dispatch(sessionActions.login({ credential:'demo@user.io', password: 'password' }))}> Log In as a Demo User</button>
+      <button className="pure-button" onClick={(e) => dispatch(sessionActions.login({ credential:'demo@user.io', password: 'password' }))}> Log In as a Demo User</button>
     </>
   );
 }

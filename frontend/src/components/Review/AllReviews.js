@@ -1,5 +1,6 @@
 import {useSelector} from 'react-redux'
 import {useParams} from 'react-router-dom'
+import './AllReviews.css'
 
 export default function AllReviews(){
     const {bookId} = useParams()
@@ -15,17 +16,17 @@ export default function AllReviews(){
     
 
     return (
-        <>
+        <div className="review-box">
             {userReviews && 
             <ul>
                 {userReviews.map(review =>(
-                    <li key={review.id}>
+                    <li key={review.id} className="review pure-u-1-2">
                         <div>Score {review.score}</div>
                         <div>{review.content}</div>
                     </li>
                 ))}
             </ul>}
-        </>
+        </div>
     )
 
 }

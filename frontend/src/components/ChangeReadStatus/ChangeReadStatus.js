@@ -16,14 +16,17 @@ export default function ChangeReadStatus({book, readBooks, shelf}){
 
     }
     return (
-        <select className="read" 
-            onChange={(e) => {  dispatch(changeReadStatus(sessionUser.id, book.id, shelf.id, e.target.value))     
-        }}
-        defaultValue={readStatus}>
-                <option value='unread' >Unread</option>
-                <option value='planningToRead' >Planning to Read</option>
-                <option value='read' >Read</option>
+        <label>Read Status: 
+            <select className="read" 
+                onChange={(e) => {  dispatch(changeReadStatus(sessionUser.id, book.id, shelf.id, e.target.value))     
+            }}
+            defaultValue={readStatus}>
+                    <option value='unread' >Unread</option>
+                    <option value='planningToRead' >Planning to Read</option>
+                    <option value='read' >Read</option>
 
-        </select>
+            </select>
+
+        </label>
     )
 }

@@ -1,0 +1,13 @@
+.review-box{
+    margin-top: 30px !important;
+}
+
+.review{
+    border: 1px solid black;
+    width: 45%;
+    background-color: whitesmoke;
+}
+
+.review:hover{
+    background-color: lightgray;
+}

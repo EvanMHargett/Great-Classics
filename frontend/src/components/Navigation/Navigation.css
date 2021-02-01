@@ -1,3 +1,5 @@
+/* styling based off pure css template*/
+
 /* .pure-form label {
     margin: 1em 0 0;
     font-weight: bold;
@@ -11,6 +13,10 @@
     width: 100%;
     margin-bottom: 1em;
 } */
+*{
+    box-sizing: border-box;
+}
+
 .home-menu {
     padding: 0.5em;
     text-align: center;
@@ -21,22 +27,58 @@
 }
 
 
-.home-menu  {
+.home-menu .pure-menu-heading {
     color: white;
     font-weight: 400;
     font-size: 120%;
 }
 
-.home-menu  a {
+.home-menu .pure-menu-selected a {
     color: white;
 }
 
 .home-menu a {
     color: #6FBEF3;
 }
+
+.home-menu .pure-menu-selected NavLink {
+    color: white;
+}
+
 .home-menu .navlink:hover,
 .home-menu .navlink:focus {
     background: none;
     border: none;
     color: #AECFE5;
 }
+
+.pure-menu.pure-menu-fixed {
+    /* Fixed menus normally have a border at the bottom. */
+    border-bottom: none;
+    /* I need a higher z-index here because of the scroll-over effect. */
+    z-index: 4;
+}
+
+.l-box {
+    padding: 1em;
+}
+
+.l-box-lrg {
+    padding: 2em;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.is-center {
+    text-align: center;
+}
+
+.main-link{
+    text-align: left;
+}
+
+.pure-menu-link{
+    font-weight: bold !important;
+    font-size: 115%;
+    
+}
+

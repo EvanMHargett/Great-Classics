@@ -51,7 +51,10 @@ export default function BooksPage(){
             {books.map((book) => (
                 <li key={book.id} className='pure-u-1-4 book-box'>
                     <Book book={book} className="book"></Book>
+                    <div>Currently on shelf&nbsp;    
                     <AddToShelf book={book} arrayShelves={arrayShelves} booksOnShelves={booksOnShelves} classNam='add-to-shelf'></AddToShelf>
+
+                    </div>
                     {userReviewsObj && 
                     <div>
                         { userReviewsObj[book.id] && 

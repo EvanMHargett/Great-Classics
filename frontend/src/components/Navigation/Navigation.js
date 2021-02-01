@@ -12,24 +12,27 @@ function Navigation({ isLoaded }){
     sessionLinks = (
       <div className="header">
         <div className="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
-          <NavLink to='' className="pure-menu-heading">Great Classics</NavLink>
-          <ProfileButton user={sessionUser} />
-          <ul className="pure-menu-list">
-            <NavLink to="/books">Books</NavLink>
-            <NavLink to={`/users/${sessionUser.id}/bookshelves`}>My Bookshelves</NavLink>
+          <NavLink to='' className="pure-menu-heading pure-u-1-2 main-link">Great Classics</NavLink>
+          
+          <ul className="pure-menu-list pure-u-1-2 ">
+            <li className="pure-menu-item"><NavLink to="/books" className="pure-menu-link">Books</NavLink></li>
+            <li className="pure-menu-item"><NavLink to={`/users/${sessionUser.id}/bookshelves`} className="pure-menu-link" >My Bookshelves</NavLink></li>
+            <li className="pure-menu-item"><ProfileButton user={sessionUser} /></li>
           </ul>
         </div>
       </div>
     );
   } else {
     sessionLinks = (
-      <div className="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
-        <NavLink to='' className="pure-menu-heading">Great Classics</NavLink>
-        <ul className="pure-menu-heading">  
-          <NavLink to="/login" className='navlink'>Log In</NavLink>
-          <NavLink to="/signup" className='navlink'>Sign Up</NavLink>
-          <NavLink to="/books" className='navlink'>Books</NavLink>
-        </ul>
+      <div className="header">
+        <div className="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+          <NavLink to='' className="pure-menu-heading pure-u-1-2 main-link">Great Classics</NavLink>
+          <ul className="pure-menu-list pure-u-1-2 "> 
+            <li className="pure-menu-item"><NavLink to="/login" className='pure-menu-link'>Log In</NavLink></li>
+            <li className="pure-menu-item"><NavLink to="/signup" className='pure-menu-link'>Sign Up</NavLink></li>
+            <li className="pure-menu-item"><NavLink to="/books" className='pure-menu-link'>Books</NavLink></li>
+          </ul>
+        </div>
       </div>
     );
   }
