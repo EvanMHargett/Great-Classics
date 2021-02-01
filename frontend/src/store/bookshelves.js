@@ -29,7 +29,7 @@ export const fetchBookshelves = (id) => async (dispatch) =>{
 
 export const createBookshelf = (id, title) => async (dispatch) =>{
     
-    const req = await fetch(`/api/bookshelves/${id}`,{
+    await fetch(`/api/bookshelves/${id}`,{
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -42,7 +42,7 @@ export const createBookshelf = (id, title) => async (dispatch) =>{
 
 export const editBookshelf = (userId, id, title) => async (dispatch) =>{
     
-    const req = await fetch(`/api/bookshelves/${userId}`,{
+    await fetch(`/api/bookshelves/${userId}`,{
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
@@ -55,7 +55,7 @@ export const editBookshelf = (userId, id, title) => async (dispatch) =>{
 
 export const deleteBookshelf = (userId, id) => async (dispatch) =>{
     
-    const req = await fetch(`/api/bookshelves/${userId}/${id}`,{
+    await fetch(`/api/bookshelves/${userId}/${id}`,{
         method: 'DELETE',
     })
       
