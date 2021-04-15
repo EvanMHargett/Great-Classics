@@ -10,7 +10,9 @@ export default function Splash(){
                 <p>
                     <Link to='/books' className="pure-button splash-button">See all books</Link>
                 </p>
+                <div>Created by Evan Hargett <a href="https://github.com/EvanMHargett"><img src="/images/GitHub.png"></img></a><a href="https://www.linkedin.com/in/evan-hargett-47723b162/">Linkedin</a></div>
             </div>
+            
         </div>
     )
 }
