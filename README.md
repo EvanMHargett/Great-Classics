@@ -10,7 +10,6 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
-[![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
@@ -192,10 +191,10 @@ Project Link: [https://github.com/EvanMHargett/Great-Classics](https://github.co
 [forks-shield]: https://img.shields.io/github/forks/RyanGC93/fitnessOverflow.svg?style=for-the-badge
 [forks-url]: https://github.com/RyanGC93/fitnessOverflow/network/members
 [stars-shield]: https://img.shields.io/github/stars/RyanGC93/fitnessOverflow.svg?style=for-the-badge
-[stars-url]: https://github.com/RyanGC93/fitnessOverflow/stargazers
+[stars-url]: https://github.com/EvanMHargett/Great-Classics/stargazers
 [issues-shield]: https://img.shields.io/github/issues/RyanGC93/fitnessOverflow.svg?style=for-the-badge
-[issues-url]: https://github.com/RyanGC93/fitnessOverflow/issues
+[issues-url]: https://github.com/EvanMHargett/Great-Classics/issues
 [license-shield]: https://img.shields.io/github/license/RyanGC93/fitnessOverflow.svg?style=for-the-badge
-[license-url]: https://github.com/RyanGC93/fitnessOverflow/blob/master/LICENSE.txt
+[license-url]: https://github.com/EvanMHargett/Great-Classics/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/RyanGC93
+[linkedin-url]: https://www.linkedin.com/in/evan-hargett-47723b162/
