@@ -48,18 +48,28 @@
 }
 
 .gh{
-    max-height: 40px;
+    max-height: 47px;
     width: auto;
-    padding-left: 10px;
+    padding-left: 20px;
+    margin-top: 20px;
 }
 
 .li{
-    max-height: 40px;
+    max-height: 47px;
     width: auto;
-    padding-left: 10px;
+    padding-left: 20px;
+    margin-top: 20px;
 }
 .about{
+    background-color: rgb(200, 200, 200);
+    width: 100%;
+    text-align: start;
     position: fixed;
     bottom: 0;
     left: 0;
+}
+
+.name{
+    display: inline-block !important;
+    margin-left: 15px;
 }
