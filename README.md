@@ -134,7 +134,15 @@ This is an example of how to list things you need to use the software and how to
    npm install
    ```
 
-
+3. Npm start in both the main directory and frontend
+   ```sh
+   npm start
+   ```
+   In a different shell window
+  ```sh
+   cd frontend
+   npm start
+   ```
 
 
 <!-- ROADMAP -->
