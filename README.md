@@ -188,7 +188,7 @@ Project Link: [https://github.com/EvanMHargett/Great-Classics](https://github.co
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/RyanGC93/fitnessOverflow.svg?style=for-the-badge
-[contributors-url]: https://github.com/RyanGC93/fitnessOverflow/graphs/contributors
+[contributors-url]: https://github.com/EvanMHargett/Great-Classics/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/RyanGC93/fitnessOverflow.svg?style=for-the-badge
 [forks-url]: https://github.com/RyanGC93/fitnessOverflow/network/members
 [stars-shield]: https://img.shields.io/github/stars/RyanGC93/fitnessOverflow.svg?style=for-the-badge
