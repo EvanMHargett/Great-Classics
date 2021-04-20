@@ -22,7 +22,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <!-- <a href="https://github.com/RyanGC93/fitnessOverflow"> -->
+  <!-- <a href="https://github.com/EvanMHargett/Great-Classics"> -->
     
 
 
@@ -76,8 +76,6 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
 Great Classics is a clone of GoodReads based around classic novels. Users are able to browse, review, search, organize and keep track of their progress on classical novels. The site uses User-based session authentication to interact with the website and access these features. 
 
 ## Feature Highlights
@@ -93,8 +91,6 @@ Great Classics is a clone of GoodReads based around classic novels. Users are ab
 
 
 ## Project Challenges
-
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
 
 Great Classics was the first project I created that utilized React and Redux. The workflow took some getting used to, but was a very valuable experience due to the power of both of those technologies. Additionally, this was the first full stack application I produced solo. This was a good, but challenging experience to plan and execute all parts of the application without much outside assistance. 
 
