@@ -8,7 +8,9 @@ export default function Review({book}){
     const [review, setReview] = useState("")
     const sessionUser = useSelector(state => state.session.user)
     const dispatch = useDispatch()
-
+    let defaultScore = 1
+    let defaultText = ""
+    
     function handleSubmit(e){
         e.preventDefault()      
 
